@@ -1,0 +1,28 @@
+*{
+	font-family: 'Tajawal', sans-serif;
+	font-weight: 700;
+	font-size: 25px;
+}
+body{
+	height: 100vh;
+	background-image: url('../img/regBack.jpg');
+	background-size: cover;
+	background-position: center;
+}
+.col{
+	font-size: 15px;
+}
+form{
+	margin: auto;
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 15px;
+	padding: 50px;
+
+}
+button{
+	margin-top: 10px;
+}
+.container{
+	position: relative;
+	top: 10%;
+}
