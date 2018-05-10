@@ -1,5 +1,7 @@
-module.exports = function(mongoose){
-	mongoose.connect('mongodb://localhost/testo')
+module.exports = function(mongoose,bcrypt){
+	mongoose.connect('mongodb://localhost/testo');
+	let Schema = mongoose.Schema;
+	let user = require('../schemats/user')
 
 	mongoose.connection.once('open',function(){
 		console.log('jest')
