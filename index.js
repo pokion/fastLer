@@ -6,7 +6,7 @@ let mongoData = require('./mongoDB/mongo.js');
 let controler = require('./pages/controler.js');
 
 let app = express();
-
+  
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'))
