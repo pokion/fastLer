@@ -1,4 +1,4 @@
-module.exports = function(app,bodyParser){
+module.exports = function(app,bodyParser,mongo){
 	let urlEncoder = bodyParser.urlencoded({ extended: false })
 
 	app.get('/rejestracja',function(req,res){
@@ -8,9 +8,25 @@ module.exports = function(app,bodyParser){
 		res.render('login',{});
 	});
 
+
 	app.post('/register', urlEncoder, function(req,res){
-		console.log(req.body)
-		res.render('registerS',{})
+
+		req.check('login', 'Login >3 letters').isLength({min:3})
+		req.check('email', 'Invalid email adress').isEmail();
+		req.check('pass', 'Password is invalid').isLength({min:5}).equals(req.body.pass2);
+
+		let errors = req.validationErrors();
+		if(errors){
+			let err=[];
+			errors.forEach(function(element,index,array){
+				err.push(element.msg)
+			})
+			console.log(err)
+			res.render('register',{err})
+		}else{
+			res.render('registerS')
+			mongo.createUser(req.body.login,req.body.email,req.body.pass)
+		}
 	})
 	
 };
