@@ -1,4 +1,4 @@
-module.exports = function(mongoose,bcrypt){
+module.exports = function(mongoose){
 	mongoose.connect('mongodb://localhost/testo');
 	let Schema = mongoose.Schema;
 	let user = require('../schemats/user')

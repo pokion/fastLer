@@ -1,7 +1,6 @@
 let express = require('express');
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
-let bcrypt = require('bcrypt')
 let mongoData = require('./mongoDB/mongo.js');
 let controler = require('./pages/controler.js');
 
@@ -12,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'))
 
 
-mongoData(mongoose,bcrypt)
+mongoData(mongoose)
 
 controler(app,bodyParser);
 
