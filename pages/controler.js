@@ -2,16 +2,18 @@ module.exports = function(app,bodyParser,mongo){
 	let urlEncoder = bodyParser.urlencoded({ extended: false })
 	let err=[];
 
+	app.get('/login',function(req,res){
+		res.render('login',{error: null});
+	});
+
+	app.post('/login',urlEncoder,function(req,res){
+		mongo.login(req.body.login, req.body.pass, res);
+
+	});
+
 	app.get('/rejestracja',function(req,res){
 		res.render('register',{err});
 	});
-	app.get('/login',function(req,res){
-		res.render('login',{});
-	});
-	app.post('/login',function(req,res){
-		//console.log(req.body.login)
-	});
-
 
 	app.post('/register', urlEncoder, function(req,res){
 
