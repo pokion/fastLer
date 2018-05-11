@@ -5,13 +5,19 @@
 }
 
 body, html {
-	color: #111;
+	color: #eee;
 	height: 100%;
 	font-family: Montserrat, sans-serif;
 	font-weight: 900;
-	//background:url(../img/background.jpg) no-repeat center center fixed;
-	background: #348ccc;
+	background:url(../img/background.jpg) no-repeat center center fixed;
+	//background: #348ccc;
 	background-size: cover;
+}
+.backg{
+	height: 100%;
+	width: 100vw;
+	//background-color: rgba(52,140,204,0.7);
+	background-color: rgba(10,10,10,0.4);
 }
 .container{
 	padding-top: 20px;

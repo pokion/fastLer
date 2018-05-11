@@ -1,11 +1,15 @@
 module.exports = function(app,bodyParser,mongo){
 	let urlEncoder = bodyParser.urlencoded({ extended: false })
+	let err=[];
 
 	app.get('/rejestracja',function(req,res){
-		res.render('register',{});
+		res.render('register',{err});
 	});
 	app.get('/login',function(req,res){
 		res.render('login',{});
+	});
+	app.post('/login',function(req,res){
+		//console.log(req.body.login)
 	});
 
 
@@ -17,12 +21,13 @@ module.exports = function(app,bodyParser,mongo){
 
 		let errors = req.validationErrors();
 		if(errors){
-			let err=[];
+			
 			errors.forEach(function(element,index,array){
 				err.push(element.msg)
 			})
-			console.log(err)
+			
 			res.render('register',{err})
+			err = [];
 		}else{
 			res.render('registerS')
 			mongo.createUser(req.body.login,req.body.email,req.body.pass)
