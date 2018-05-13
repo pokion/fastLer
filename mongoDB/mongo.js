@@ -17,8 +17,14 @@ module.exports = function(mongoose){
 		})
 	}
 
-	this.find = function(login,pass){
-		let k = user.find({name: login, password: pass})
-		console.log(k)
+	this.login = function(login,pass,res){
+		user.find({name: login, password: pass}, function(err,doc){
+			//console.log(doc[0].name)
+			if(login==doc[0].name&&doc[0].password==pass){
+				res.render('profil',{login:doc[0].name})
+			}else{
+				res.render('login',{error:"Złe hasło lub login."})
+			}
+		})
 	}
 }
