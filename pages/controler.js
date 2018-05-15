@@ -1,10 +1,13 @@
-module.exports = function(app,bodyParser,mongo){
+module.exports = function(app,bodyParser,mongo,mongoose){
+	let user = require('../schemats/user')
 	let urlEncoder = bodyParser.urlencoded({ extended: false })
-	let err=[];
 
 	app.get('/login',function(req,res){
 		res.render('login',{error: null});
 	});
+	app.get('/',function(req,res){
+		res.render('login',{error: null})
+	})
 
 	app.post('/login',urlEncoder,function(req,res){
 		mongo.login(req.body.login, req.body.pass, res);
@@ -12,28 +15,41 @@ module.exports = function(app,bodyParser,mongo){
 	});
 
 	app.get('/rejestracja',function(req,res){
-		res.render('register',{err});
+		res.render('register',{err:[]});
 	});
 
 	app.post('/register', urlEncoder, function(req,res){
+				let missErr = [];
+				req.check('login', 'must Login >3 letters').isLength({min:3})
+				req.check('email', 'Invalid email adress').isEmail();
+				req.check('pass', 'Password is invalid').isLength({min:5}).equals(req.body.pass2);
 
-		req.check('login', 'Login >3 letters').isLength({min:3})
-		req.check('email', 'Invalid email adress').isEmail();
-		req.check('pass', 'Password is invalid').isLength({min:5}).equals(req.body.pass2);
+				let errors = req.validationErrors();
 
-		let errors = req.validationErrors();
-		if(errors){
-			
-			errors.forEach(function(element,index,array){
-				err.push(element.msg)
-			})
-			
-			res.render('register',{err})
-			err = [];
-		}else{
-			res.render('registerS')
-			mongo.createUser(req.body.login,req.body.email,req.body.pass)
-		}
-	})
+				if(errors){
+					errors.forEach(function(element,index,array){
+						missErr.push(element.msg)
+					})
+					res.render('register',{err:missErr})
+				}else{
+					mongoose.connect('mongodb://localhost/users');
+						user.find({name: req.body.login, email: req.body.email},function(err,doc){
+							//console.log(req.body.login,req.body.email,doc[0])
+							if(err) throw err;
+							
+								if(doc[0]){
+									if(doc[0].name==req.body.login) missErr.push('Ten login jest już zajęty.')
+									if(doc[0].email==req.body.email) missErr.push('Ten email jest już zajęty.')
+									res.render('register',{err:missErr})
+
+								}else{
+									res.render('registerS')
+									mongo.createUser(req.body.login,req.body.email,req.body.pass)
+								}
+						})
+					
+				}			
+			})	
+			mongoose.disconnect();	
 	
 };
