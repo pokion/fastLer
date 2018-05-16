@@ -1,8 +1,8 @@
 let express = require('express');
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
-let expressValidator = require('express-validator')
-let expressSession = require('express-session')
+let expressValidator = require('express-validator');
+let expressSession = require('express-session');
 let mongoData = require('./mongoDB/mongo.js');
 let controler = require('./pages/controler.js');
 
@@ -17,7 +17,7 @@ app.use(expressSession({secret: 'max', saveUninitaialized: false, resave: false}
 
 let mongo = new mongoData(mongoose)
 
-controler(app,bodyParser,mongo);
+controler(app,bodyParser,mongo,mongoose);
 
 app.listen(8080,()=>{
 	console.log('now app listen port: 8080');
