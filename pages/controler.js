@@ -33,13 +33,12 @@ module.exports = function(app,bodyParser,mongo,mongoose){
 					res.render('register',{err:missErr})
 				}else{
 					mongoose.connect('mongodb://localhost/users');
-						user.find({name: req.body.login, email: req.body.email},function(err,doc){
-							//console.log(req.body.login,req.body.email,doc[0])
+						user.findOne({$or:[{name:req.body.login},{email:req.body.email}]},function(err,doc){
 							if(err) throw err;
-							
-								if(doc[0]){
-									if(doc[0].name==req.body.login) missErr.push('Ten login jest już zajęty.')
-									if(doc[0].email==req.body.email) missErr.push('Ten email jest już zajęty.')
+							console.log(doc)
+								if(doc){
+									if(doc.name==req.body.login) missErr.push('Ten login jest już zajęty.')
+									if(doc.email==req.body.email) missErr.push('Ten email jest już zajęty.')
 									res.render('register',{err:missErr})
 
 								}else{
