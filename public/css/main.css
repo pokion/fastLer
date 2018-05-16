@@ -14,7 +14,7 @@ body, html {
 	font-weight: 900;
 	background:url(../img/background.jpg) no-repeat center center fixed;
 	background-size: cover;
-	 overflow-x: hidden;
+	overflow-x: hidden;
 }
 .backg{
 	min-height: 100%;
@@ -27,8 +27,9 @@ body, html {
 	min-height: 100%;
 }
 .row.mid{
-	margin-top: 100px;
 	text-align: center;
+	min-height: 500px;
+	margin-bottom: 112px;
 }
 p{
 	line-height: 2;
@@ -42,7 +43,7 @@ h4{
 	width: 100%;
 	background: rgba(10,10,10,0.5);
 	padding: 20px;
-	min-height: 200px;
+	min-height: 250px;
 	border-radius: 20px 20px 0 0;
 }
 .motto p{
@@ -66,7 +67,7 @@ h4{
 /* -------------------------*/
 a,
 a:active{
-	color: #111;
+	color: #eee;
 	text-decoration: none;
 	border: none;
 }
@@ -145,5 +146,15 @@ button.register,
 	padding: 5px;
 }
 .stats{
+	min-height: 500px;
+}
+/* ------------------------- */
+/* Register */
+/* ------------------------- */
+.mid{
+	background: rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	margin: 20px 0;
+	border-radius: 20px;
 	min-height: 500px;
 }
