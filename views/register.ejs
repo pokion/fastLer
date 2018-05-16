@@ -4,27 +4,24 @@
 			<form method="post" action="/register">
 				<h2>Rejestracja</h2>
 				<h5>
-					<ul>
+					<ul class="error">
 						<% for(var i=0; i<err.length; i++) {%>
 							<li><%= err[i] %></li>
 						<% } %>
 					</ul>
 				</h5>
-				<div class="col">
 					<input type="text" name="login" placeholder="Login">
 					<input type="text" name="email" placeholder="E-mail">
 					<input type="password" name="pass" placeholder="Hasło">
 					<input type="password" name="pass2" placeholder="Powtórz hasło">
-				</div>
-				<div class="col">
-					<button>Zarejestruj</button>
+					<button class="btn register">Zarejestruj</button>
 					<a href="/login" class="reg">Zaloguj się →</a>
 				</div>
 			</form>
-		</div>
+
 		<div class="col-sm-6">
 			<h2>Twój pierwszy krok</h2>
 			<p>Teraz tylko rejestracja dzieli Cię od możliwości przyjemnej nauki! Pierwszy krok jest zawsze najtrudniejszy, ale mamy nadzieję, że z naszą pomocą będziesz w stanie systematycznie stawiać kolejne w drodzę po swój cel!</p>
 		</div>
-		</div>
+
 <% include includes/footer.ejs %>
