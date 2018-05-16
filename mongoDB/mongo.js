@@ -27,12 +27,16 @@ module.exports = function(mongoose){
 	}//end createUser
 
 	this.login = function(login,pass,res){
+		if(login&&pass){
+
+		}
 		this.connect();
 			this.user.find({name: login, password: pass}, function(err,doc){
-				//console.log(doc[0].name)
+				console.log(doc[0])
 				if(err) throw err;
 
-				if(login==doc[0].name&&doc[0].password==pass){
+
+				if(doc[0]){
 					res.render('profil',{login:doc[0].name})
 				}else{
 					res.render('login',{error:"Złe hasło lub login."})
@@ -41,15 +45,4 @@ module.exports = function(mongoose){
 
 	}//end login
 	this.disconnect();
-
-	this.login = function(login,pass,res){
-		user.find({name: login, password: pass}, function(err,doc){
-			//console.log(doc[0].name)
-			if(login==doc[0].name&&doc[0].password==pass){
-				res.render('profil',{login:doc[0].name})
-			}else{
-				res.render('login',{error:"Złe hasło lub login."})
-			}
-		})
-	}
 }

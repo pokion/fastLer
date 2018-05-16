@@ -12,15 +12,10 @@ module.exports = function(app,bodyParser,mongo,mongoose){
 
 	app.post('/login',urlEncoder,function(req,res){
 		mongo.login(req.body.login, req.body.pass, res);
-
 	});
 
 	app.get('/rejestracja',function(req,res){
-<<<<<<< HEAD
-		res.render('register',{err});
-=======
 		res.render('register',{err:[]});
->>>>>>> e4f8eb28a0d2877848b4bb425bd3cb92c5236886
 	});
 
 	app.post('/register', urlEncoder, function(req,res){
