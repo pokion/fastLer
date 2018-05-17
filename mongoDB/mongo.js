@@ -37,7 +37,7 @@ module.exports = function(mongoose){
 
 
 				if(doc[0]){
-					res.render('profil',{login:doc[0].name})
+					res.render('profil',{login: doc[0].name,data:doc[0].created_at})
 				}else{
 					res.render('login',{error:"Złe hasło lub login."})
 				}

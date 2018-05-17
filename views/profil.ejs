@@ -1,9 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>profil</title>
-</head>
-<body>
-zalogowałeś się jako <%= login%>
-</body>
-</html>
+<% include includes/header.ejs %>
+<!-- profil -->
+<div class="row profile align-items-center justify-content-cente">
+		<div class="col-sm-4-flex justify-content-center colorline">
+				<img src="../img/avatar.jpg" alt="avatar" class="avatar">
+		</div>
+		<div class="col-sm-4-flex r">
+			<ul class="profile-info">
+				<li>Nazwa:  <%= login%></li>
+				<li>Ilość punktów:  237</li>
+				<li>Pozycja w rankingu:  #1</li>
+				<li>Data dołączenia: <%= data%></li>
+			</ul>
+		</div>
+	</div>
+	<!-- statystyki -->
+<div class="row stats">
+	<h4>Statystyki</h4>
+</div>
+
+<% include includes/footer.ejs %>
