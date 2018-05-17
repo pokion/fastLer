@@ -140,13 +140,26 @@ button.register,
 	text-align: center;
 }
 .profile-info{
+	margin-left: auto;
+	margin-right: auto;
 	list-style-type: none;
+	margin-left: 20px;
+	display: block;
 }
 .profile-info li{
 	padding: 5px;
 }
 .stats{
 	min-height: 500px;
+}
+@media only screen and (max-width: 490px) {
+	.colorline{
+		border-right: none;
+		border-bottom: 	2px solid #348ccc;
+		}
+		.avatar{
+			margin: 20px 0;
+		}
 }
 /* ------------------------- */
 /* Register */
