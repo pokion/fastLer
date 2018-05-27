@@ -6,10 +6,6 @@ module.exports = function(app,bodyParser,mongo,mongoose){
 		res.render('login',{error: null});
 	});
 
-	app.get('*', function(req, res){
-	 	res.send("błąd 404",404)
-	});
-
 	app.get('/login',function(req,res){
 		res.render('login',{error: null});
 	});

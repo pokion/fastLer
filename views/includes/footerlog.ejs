@@ -1,16 +1,8 @@
 </div>
 		<div class="col footer">
 			<div class="row">
-					<div class="col-sm-7 motto">
+					<div class="col-sm-12 motto">
 							<p>"Dawaj Czaruś skończymy tę stronę i będziemy szczęśliwi..."</p>
-					</div>
-					<div class="col-sm-5 justify-content-end links">
-							<ul><h5>Menu</h5>
-								<li><a href="/">Strona główna</a></li>
-								<li><a href="#">Profil</a></li>
-								<li><a href="#">Wyzwania</a></li>
-								<li><a href="#">Ranking</a></li>
-							</ul>
 					</div>
 			</div>
 			<div class="footer-copyright">
@@ -21,6 +13,18 @@
 
 	</div>
 	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		let url = window.location.href;
+		let arr = url.split("/");
+		let result = arr[arr.length-1]
+
+		if(result=='rejestracja#'||result=='rejestracja'){
+			$('#btn').append('<a href="/login"><button type="button" class="reg btn-success">Login</button></a>')
+		}
+		if(result=='login#'||result=='login'){
+			$('#btn').append('<a href="/rejestracja"><button type="button" class="reg btn-success">Rejestracja</button></a>')
+		}
+	</script>
 	<script type="text/javascript" src="bootstrap.min.js"></script>
 	<!-- <script type="text/javascript" src="sorybawiesie.js"></script> -->
 </body>
