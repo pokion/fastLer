@@ -35,6 +35,9 @@ p{
 	line-height: 2;
 	font-size: 19px;
 }
+.warn{
+	color: #cc3300;
+}
 h4{
 	padding: 10px;
 }
@@ -118,7 +121,7 @@ button.register,
 	padding: 5px 10px;
 }
 /* ------------------------- */
-/* Home styling */
+/* Profile styling */
 /* ------------------------- */
 .profile,
 .stats{
@@ -170,4 +173,69 @@ button.register,
 	margin: 20px 0;
 	border-radius: 20px;
 	min-height: 500px;
+}
+/* -------------------------  */
+/* main page */
+/* -------------------------  */
+.intro{
+	padding-bottom: 0px;
+	margin-bottom: : 0px;
+}
+.icons{
+	text-align: center;
+	margin: auto;
+	padding-top: 0px;
+	margin-top: : 0px;
+}
+.window{
+		background: green;
+		padding: 20px 5px;
+		margin: 10px;
+		border-radius: 5px;
+}
+.window:hover{
+	background: #004c00;
+}
+.forward{
+	margin: auto;
+}
+/* -------------------------  */
+/* Ranking */
+/* -------------------------  */
+h2{
+	padding: 0px 10px;
+	text-align: left;
+}
+table{
+	width: 100%;
+}
+/* -------------------------  */
+/* Awesome! */
+/* -------------------------  */
+@keyframes flickerDown {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}@-o-keyframes flickerDown{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerDown{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerDown{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.down{
+	font-size: 60px;
+	animation: flickerDown 1.5s infinite;
+}
+.window >.fas{
+	font-size: 40px;
+	padding-bottom: 15px;
 }

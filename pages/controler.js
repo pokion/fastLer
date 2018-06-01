@@ -3,8 +3,14 @@ module.exports = function(app,bodyParser,mongo,mongoose){
 	let urlEncoder = bodyParser.urlencoded({ extended: false })
 
 	app.get('/',function(req,res){
-		res.render('login',{error: null});
+		res.render('home',{error: null});
 	});
+	app.get('/profil',function(req,res){
+			res.render('profil',{error: null});
+		});
+		app.get('/rank',function(req,res){
+			res.render('rank',{error: null});
+		});
 
 	app.get('/login',function(req,res){
 		res.render('login',{error: null});
