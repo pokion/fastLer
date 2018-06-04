@@ -24,6 +24,11 @@ module.exports = function(app,bodyParser,mongo,mongoose){
 		res.render('register',{err:[]});
 	});
 
+	app.get('/rejestracjas',function(req,res){
+		res.render('registerS');
+	});
+
+
 	app.post('/register', urlEncoder, function(req,res){
 				let missErr = [];
 				req.check('login', 'must Login >3 letters').isLength({min:3})

@@ -1,13 +1,17 @@
-</div>
-		<div class="col footer">
+
+	<div class="col footer">
 			<div class="row">
 					<div class="col-sm-12 motto">
 							<p>"Dawaj Czaruś skończymy tę stronę i będziemy szczęśliwi..."</p>
 					</div>
+					
 			</div>
 			<div class="footer-copyright">
 			 © 2018 Copyright:<a href="/"> EasyWords.com </a>
 	 </div>
+		</div>
+
+
 		</div>
 	</div>
 
@@ -23,6 +27,9 @@
 		}
 		if(result=='login#'||result=='login'){
 			$('#btn').append('<a href="/rejestracja"><button type="button" class="reg btn-success">Rejestracja</button></a>')
+		}
+		if(result=='register#'||result=='register'){
+			$('#btn').append('<a href="/login"><button type="button" class="reg btn-success">Login</button></a>')
 		}
 	</script>
 	<script type="text/javascript" src="bootstrap.min.js"></script>
