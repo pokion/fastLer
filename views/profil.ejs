@@ -13,9 +13,41 @@
 			</ul>
 		</div>
 	</div>
+	<!-- main -->
+<div id="main" style="position: relative;">
+	<button class="btnProfil" id="rank">Ranking</button>
+	<button class="btnProfil" id="stats">Statystyki</button>
 	<!-- statystyki -->
-<div class="row stats">
-	<h4>Statystyki</h4>
+	<div class="row mid" id="statystyki">
+		<div class="col-sm-12">
+			<h2>Statystyki</h2>
+		</div>
+	</div>
+	<!-- ranking -->
+	<div class="row mid hidden" id="ranking">
+	<div class="col-sm-12">
+		<h2>Ranking</h2>
+	<div class="table">
+		<table>
+			<tr>
+				<td>Pozycja</td><td>Nazwa</td><td>Wynik</td>
+			</tr>
+			<tr>
+				<td>1</td><td>Ja</td><td>Milion</td>
+			</tr>
+			<tr>
+				<td>2</td><td>Ty</td><td>Milion-1</td>
+			</tr>
+			<tr>
+				<td>3</td><td>Kuba</td><td>-Milion</td>
+			</tr>
+			<tr>
+				<td>4</td><td>Gej</td><td>Milion1</td>
+			</tr>
+		</table>
+		</div>
+	</div>
 </div>
-
+</div>
+	<!-- end main -->
 <% include includes/footer.ejs %>

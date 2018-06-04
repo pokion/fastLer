@@ -46,7 +46,6 @@ module.exports = function(app,bodyParser,mongo,mongoose){
 					mongoose.connect('mongodb://localhost/users');
 						user.findOne({$or:[{name:req.body.login},{email:req.body.email}]},function(err,doc){
 							if(err) throw err;
-							console.log(doc)
 								if(doc){
 									if(doc.name==req.body.login) missErr.push('Ten login jest już zajęty.')
 									if(doc.email==req.body.email) missErr.push('Ten email jest już zajęty.')

@@ -18,9 +18,10 @@ body, html {
 	height: 100vh;
 }
 .backg{
-	min-height: 100%;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 	background-color: rgba(10,10,10,0.4);
+	display: inline;
 }
 .container{
 	padding-top: 20px;
@@ -126,6 +127,19 @@ button.register,
 /* ------------------------- */
 /* Profile styling */
 /* ------------------------- */
+.btnProfil{
+	position: absolute;
+	right: 20px;
+	top: 5px;
+}
+.btnProfil:nth-child(1){
+	right: 140px;
+}
+.hidden{
+	position: fixed;
+	visibility: hidden;
+	left: 19182000px;
+}
 .profile,
 .stats{
 	background: rgba(0, 0, 0, 0.5);

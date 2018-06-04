@@ -32,7 +32,7 @@ module.exports = function(mongoose){
 		}
 		this.connect();
 			this.user.find({name: login, password: pass}, function(err,doc){
-				console.log(doc[0])
+				//console.log(doc[0])
 				if(err) throw err;
 
 
