@@ -6,11 +6,11 @@ module.exports = function(app,bodyParser,mongo,mongoose){
 		res.render('home',{error: null});
 	});
 	app.get('/profil',function(req,res){
-			res.render('profil',{error: null});
-		});
-		app.get('/rank',function(req,res){
-			res.render('rank',{error: null});
-		});
+		res.render('profil',{error: null});
+	});
+	app.get('/rank',function(req,res){
+		res.render('rank',{error: null});
+	});
 
 	app.get('/login',function(req,res){
 		res.render('login',{error: null});
