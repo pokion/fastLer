@@ -15,7 +15,7 @@ body, html {
 	background:url(../img/background.jpg) no-repeat center center fixed;
 	background-size: cover;
 	overflow-x: hidden;
-	height: 100vh;
+	height: 100%;
 }
 .backg{
 	height: 100%;
@@ -26,7 +26,7 @@ body, html {
 .container{
 	padding-top: 20px;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 }
 .row.mid{
 	text-align: center;
@@ -131,9 +131,16 @@ button.register,
 	position: absolute;
 	right: 20px;
 	top: 5px;
+	height: 40px;
+	width: 100px;
+	padding: 0px;
+	z-index: 100;
 }
 .btnProfil:nth-child(1){
 	right: 140px;
+}
+.btnProfil:nth-child(2){
+	right: 280px;
 }
 .hidden{
 	position: fixed;
